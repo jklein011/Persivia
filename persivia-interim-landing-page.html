@@ -155,8 +155,9 @@
       position: absolute; width: 65%; min-width: 520px;
       transition: all 0.65s cubic-bezier(0.4, 0, 0.2, 1);
       border-radius: 24px; overflow: hidden;
+      opacity: 0; pointer-events: none; z-index: 1;
     }
-    .stage-slide.is-active { transform: translateX(0) scale(1); opacity: 1; z-index: 3; }
+    .stage-slide.is-active { transform: translateX(0) scale(1); opacity: 1; z-index: 3; pointer-events: auto; }
     .stage-slide.is-prev { transform: translateX(-63%) scale(0.87); opacity: 0.65; z-index: 2; pointer-events: none; }
     .stage-slide.is-next { transform: translateX(63%) scale(0.87); opacity: 0.65; z-index: 2; pointer-events: none; }
 
@@ -167,7 +168,7 @@
     .slide-inner::before { content: ''; position: absolute; top: -60px; right: -60px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(21,204,147,0.15) 0%, transparent 70%); pointer-events: none; }
     .slide-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; position: relative; z-index: 1; }
     .case-study__eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
-    .case-study__client { font-size: 24px; font-weight: 800; color: var(--white); letter-spacing: -0.5px; margin-bottom: 12px; }
+    .case-study__client { font-size: 36px; font-weight: 800; line-height: 1.05; color: var(--white); letter-spacing: -0.5px; margin-bottom: 12px; }
     .case-study__desc { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.65; margin-bottom: 20px; }
     .case-study__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
     .tag { background: rgba(21,204,147,0.15); color: var(--green); font-size: 11px; font-weight: 600; padding: 5px 12px; border-radius: 100px; }
@@ -195,9 +196,9 @@
     .logo-marquee__track { display: flex; align-items: center; gap: 56px; width: max-content; animation: marquee 24s linear infinite; }
     .logo-marquee__track:hover { animation-play-state: paused; }
     @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    .logo-chip { height: 44px; background: rgba(255,255,255,0.85); border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 6px 20px; min-width: 120px; white-space: nowrap; transition: background 0.2s, transform 0.2s; }
+    .logo-chip { height: 66px; background: rgba(255,255,255,0.85); border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 8px 24px; min-width: 150px; white-space: nowrap; transition: background 0.2s, transform 0.2s; }
     .logo-chip:hover { background: #ffffff; transform: translateY(-2px); }
-    .logo-chip img { height: 28px; width: auto; max-width: 120px; object-fit: contain; filter: grayscale(100%) opacity(0.65); transition: filter 0.2s; }
+    .logo-chip img { height: 42px; width: auto; max-width: 160px; object-fit: contain; filter: grayscale(100%) opacity(0.65); transition: filter 0.2s; }
     .logo-chip:hover img { filter: grayscale(40%) opacity(0.9); }
 
     /* TESTIMONIAL */
@@ -668,20 +669,11 @@
               <div>
                 <p class="case-study__eyebrow">Acute Care / Post-Discharge / Care Coordination</p>
                 <h3 class="case-study__client">HCA Florida Oak Hill Hospital</h3>
-                <p class="case-study__desc" style="margin-bottom:8px;">Reducing readmissions through coordinated care.</p>
-                <p class="case-study__desc">Connected care teams with real-time insights to improve post-discharge outcomes.</p>
+                <p class="case-study__desc">Reducing readmissions through coordinated care. Connected care teams with real-time insights to improve post-discharge outcomes.</p>
                 <div class="case-study__tags" style="margin-top:16px;">
-                  <span class="tag">Readmission Reduction</span>
-                  <span class="tag">Care Coordination</span>
+                  <span class="tag">Acute Care</span>
                   <span class="tag">Post-Discharge</span>
-                </div>
-                <!-- Footprint strip -->
-                <div style="display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;">
-                  <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:500;">Acute Care</span>
-                  <span style="font-size:12px;color:rgba(21,204,147,0.5);">·</span>
-                  <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:500;">Post-Discharge</span>
-                  <span style="font-size:12px;color:rgba(21,204,147,0.5);">·</span>
-                  <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:500;">Care Coordination</span>
+                  <span class="tag">Care Coordination</span>
                 </div>
                 <a href="#contact" class="case-study__cta" style="margin-top:20px;">Learn More &rarr;</a>
               </div>
@@ -702,20 +694,11 @@
               <div>
                 <p class="case-study__eyebrow">Value-Based Care / ACO / Bundled Payments</p>
                 <h3 class="case-study__client">Prime Healthcare</h3>
-                <p class="case-study__desc" style="margin-bottom:8px;">A national leader in value-based care transformation.</p>
-                <p class="case-study__desc">Unified data across 50+ hospitals to power ACO, MA, and bundled payment performance.</p>
+                <p class="case-study__desc">A national leader in value-based care transformation. Unified data across 50+ hospitals to power ACO, MA, and bundled payment performance.</p>
                 <div class="case-study__tags" style="margin-top:16px;">
-                  <span class="tag">ACO Performance</span>
-                  <span class="tag">Medicare Advantage</span>
-                  <span class="tag">Bundled Payments</span>
-                </div>
-                <!-- Footprint strip -->
-                <div style="display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;">
-                  <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:500;">51 Hospitals</span>
-                  <span style="font-size:12px;color:rgba(21,204,147,0.5);">·</span>
-                  <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:500;">360 Outpatient Sites</span>
-                  <span style="font-size:12px;color:rgba(21,204,147,0.5);">·</span>
-                  <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:500;">Multi-EHR</span>
+                  <span class="tag">51 Hospitals</span>
+                  <span class="tag">360 Outpatient Sites</span>
+                  <span class="tag">Multi-EHR</span>
                 </div>
                 <a href="#contact" class="case-study__cta" style="margin-top:20px;">Learn More &rarr;</a>
               </div>
@@ -736,20 +719,11 @@
               <div>
                 <p class="case-study__eyebrow">In-Home Care / Risk Adjustment / Telehealth</p>
                 <h3 class="case-study__client">Harmony Cares</h3>
-                <p class="case-study__desc" style="margin-bottom:8px;">Advancing in-home care with AI-enabled workflows.</p>
-                <p class="case-study__desc">Enabled risk adjustment, care management, and telehealth on a single platform.</p>
+                <p class="case-study__desc">Advancing in-home care with AI-enabled workflows. Enabled risk adjustment, care management, and telehealth on a single platform.</p>
                 <div class="case-study__tags" style="margin-top:16px;">
-                  <span class="tag">Risk Adjustment</span>
-                  <span class="tag">Care Management</span>
-                  <span class="tag">Telehealth</span>
-                </div>
-                <!-- Footprint strip -->
-                <div style="display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;">
-                  <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:500;">200+ Groups</span>
-                  <span style="font-size:12px;color:rgba(21,204,147,0.5);">·</span>
-                  <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:500;">In-Home Care</span>
-                  <span style="font-size:12px;color:rgba(21,204,147,0.5);">·</span>
-                  <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:500;">Telehealth Enabled</span>
+                  <span class="tag">200+ Groups</span>
+                  <span class="tag">In-Home Care</span>
+                  <span class="tag">Telehealth Enabled</span>
                 </div>
                 <a href="#contact" class="case-study__cta" style="margin-top:20px;">Learn More &rarr;</a>
               </div>

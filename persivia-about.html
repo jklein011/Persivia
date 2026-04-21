@@ -206,7 +206,8 @@
     /* LEADERSHIP */
     .leadership { background: var(--offwhite); }
     .leadership__header { text-align: center; max-width: 780px; margin: 0 auto 64px; }
-    .leadership__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+    .leadership__grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 28px; }
+    .leadership__grid .leader-card { flex: 0 0 calc(33.33% - 20px); max-width: calc(33.33% - 20px); }
     .leader-card {
       background: var(--white); border-radius: 20px; overflow: hidden;
       border: 1px solid rgba(19,77,103,0.08);
@@ -265,17 +266,18 @@
     /* ADVISORS */
     .advisors { background: var(--white); padding: 80px 0; }
     .advisors__header { text-align: center; max-width: 740px; margin: 0 auto 48px; }
-    .advisors__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .advisors__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 860px; margin: 0 auto; }
     .advisor-card {
       background: var(--offwhite); border-radius: 16px; padding: 28px 24px;
       text-align: center; border: 1px solid rgba(19,77,103,0.07);
     }
     .advisor-card__avatar {
-      width: 64px; height: 64px; border-radius: 50%;
+      width: 80px; height: 80px; border-radius: 50%;
       background: linear-gradient(145deg, var(--navy), #0d3548);
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 16px;
+      margin: 0 auto 16px; overflow: hidden; flex-shrink: 0;
     }
+    .advisor-card__avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
     .advisor-card__name { font-size: 15px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
     .advisor-card__title { font-size: 12px; color: var(--text-light); line-height: 1.5; }
 
@@ -324,16 +326,15 @@
       .why__inner { grid-template-columns: 1fr; }
       .mission-strip__inner { grid-template-columns: 1fr; gap: 32px; }
       .values__grid { grid-template-columns: 1fr; }
-      .leadership__grid { grid-template-columns: repeat(2, 1fr); }
-      .leadership__grid .leader-card { font-size: 13px; }
-      .advisors__grid { grid-template-columns: repeat(2, 1fr); }
+      .leadership__grid .leader-card { flex: 0 0 calc(50% - 14px); max-width: calc(50% - 14px); }
+      .advisors__grid { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
       .nav__links { display: none; }
     }
     @media (max-width: 600px) {
       .container { padding: 0 20px; }
       .section { padding: 64px 0; }
-      .leadership__grid { grid-template-columns: 1fr; }
-      .advisors__grid { grid-template-columns: repeat(2, 1fr); }
+      .leadership__grid .leader-card { flex: 0 0 100%; max-width: 100%; }
+      .advisors__grid { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
     }
   </style>
 </head>
@@ -660,19 +661,6 @@
         </div>
       </div>
 
-      <!-- Gregory Magazu -->
-      <div class="leader-card">
-        <div class="leader-card__photo">
-          <img src="Bio-Headshots/Greg Magazu_HS.jpg" alt="Gregory Magazu" />
-        </div>
-        <div class="leader-card__body">
-          <div class="leader-card__name">Gregory Magazu, MBA</div>
-          <div class="leader-card__title">VP of Product Management</div>
-          <div class="leader-card__bio">Greg brings over 15 years of healthcare IT product leadership to Persivia, with a track record of building product strategies that balance immediate client needs with long-term platform vision. Previously VP of Product Management at OncoHealth and Director of Product Management at Optum, he was recognized as an inventor in UHG's Invention Program for a patent in AI-driven predictive analytics.</div>
-          <a href="https://www.linkedin.com/in/gregorymagazu/" target="_blank" class="leader-card__linkedin">LinkedIn &rarr;</a>
-        </div>
-      </div>
-
       <!-- Shardul Mehta -->
       <div class="leader-card">
         <div class="leader-card__photo">
@@ -683,19 +671,6 @@
           <div class="leader-card__title">Clinical Solutions Architect</div>
           <div class="leader-card__bio">Shardul is a physician-turned-healthcare technologist with a background spanning clinical medicine, health informatics, and interoperability. As Clinical Solutions Architect at Persivia, he bridges the gap between clinical workflows and technology, helping care organizations implement solutions that actually work at the point of care.</div>
           <a href="https://www.linkedin.com/in/shardul-mehta-899297b4/" target="_blank" class="leader-card__linkedin">LinkedIn &rarr;</a>
-        </div>
-      </div>
-
-      <!-- Sharon Twaddle-McGinnis -->
-      <div class="leader-card">
-        <div class="leader-card__photo">
-          <img src="Bio-Headshots/Sharon_HS.jpg" alt="Sharon Twaddle-McGinnis" />
-        </div>
-        <div class="leader-card__body">
-          <div class="leader-card__name">Sharon Twaddle-McGinnis, BSN, MHA</div>
-          <div class="leader-card__title">VP of Client Services</div>
-          <div class="leader-card__bio">Sharon brings over 30 years of healthcare leadership to Persivia. Before joining, she served as Director of Quality at Carolinas HealthCare System and as Clinical Quality Manager at Duke University Health System, giving her firsthand experience with hospital quality and performance improvement in the complex value-based care arena.</div>
-          <a href="https://www.linkedin.com/in/sharon-twaddle-mcginnis-bsn-mha-cssbb-4aa44a2a/" target="_blank" class="leader-card__linkedin">LinkedIn &rarr;</a>
         </div>
       </div>
 
@@ -712,18 +687,6 @@
         </div>
       </div>
 
-      <!-- Diana Rouhana -->
-      <div class="leader-card">
-        <div class="leader-card__photo">
-          <img src="Bio-Headshots/Diana_HS.jpg" alt="Diana Rouhana" />
-        </div>
-        <div class="leader-card__body">
-          <div class="leader-card__name">Diana Rouhana</div>
-          <div class="leader-card__title">Director of Implementation</div>
-          <div class="leader-card__bio">Diana has been at the heart of Persivia's implementation program for nearly 13 years, overseeing the end-to-end deployment of CareSpace across value-based care, care management, and quality reporting programs. Her deep institutional knowledge and cross-functional approach are a big part of why Persivia's implementations actually stick.</div>
-          <a href="https://www.linkedin.com/in/diana-rouhana-24a36614/" target="_blank" class="leader-card__linkedin">LinkedIn &rarr;</a>
-        </div>
-      </div>
 
     </div>
   </div>
@@ -740,43 +703,24 @@
     <div class="advisors__grid">
       <div class="advisor-card">
         <div class="advisor-card__avatar">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
+          <img src="Bio-Headshots/Greg Magazu_HS.jpg" alt="Gregory Magazu" />
         </div>
-        <div class="advisor-card__name">[Name]</div>
-        <div class="advisor-card__title">[Title]</div>
+        <div class="advisor-card__name">Gregory Magazu, MBA</div>
+        <div class="advisor-card__title">VP of Product Management</div>
       </div>
       <div class="advisor-card">
         <div class="advisor-card__avatar">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
+          <img src="Bio-Headshots/Diana_HS.jpg" alt="Diana Rouhana" />
         </div>
-        <div class="advisor-card__name">[Name]</div>
-        <div class="advisor-card__title">[Title]</div>
+        <div class="advisor-card__name">Diana Rouhana</div>
+        <div class="advisor-card__title">Director of Implementation</div>
       </div>
       <div class="advisor-card">
         <div class="advisor-card__avatar">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
+          <img src="Bio-Headshots/Sharon_HS.jpg" alt="Sharon Twaddle-McGinnis" />
         </div>
-        <div class="advisor-card__name">[Name]</div>
-        <div class="advisor-card__title">[Title]</div>
-      </div>
-      <div class="advisor-card">
-        <div class="advisor-card__avatar">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-        </div>
-        <div class="advisor-card__name">[Name]</div>
-        <div class="advisor-card__title">[Title]</div>
+        <div class="advisor-card__name">Sharon Twaddle-McGinnis, BSN, MHA</div>
+        <div class="advisor-card__title">VP of Client Services</div>
       </div>
     </div>
   </div>
