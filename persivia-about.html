@@ -206,7 +206,7 @@
     /* LEADERSHIP */
     .leadership { background: var(--offwhite); }
     .leadership__header { text-align: center; max-width: 780px; margin: 0 auto 64px; }
-    .leadership__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .leadership__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
     .leader-card {
       background: var(--white); border-radius: 20px; overflow: hidden;
       border: 1px solid rgba(19,77,103,0.08);
@@ -244,6 +244,9 @@
     .leader-card__photo-label {
       font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
       text-transform: uppercase; color: rgba(19,77,103,0.5);
+    }
+    .leader-card__photo img {
+      width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;
     }
     .leader-card__body { padding: 24px 28px 28px; }
     .leader-card__name { font-size: 18px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
@@ -322,6 +325,7 @@
       .mission-strip__inner { grid-template-columns: 1fr; gap: 32px; }
       .values__grid { grid-template-columns: 1fr; }
       .leadership__grid { grid-template-columns: repeat(2, 1fr); }
+      .leadership__grid .leader-card { font-size: 13px; }
       .advisors__grid { grid-template-columns: repeat(2, 1fr); }
       .nav__links { display: none; }
     }
@@ -396,7 +400,7 @@
           </svg>
         </div>
         <div class="mission-item__title">Our Approach</div>
-        <div class="mission-item__text">Insights alone don't change outcomes. Persivia embeds actionable intelligence directly into the workflows care teams already use&mdash;so the right action becomes the easiest one to take.</div>
+        <div class="mission-item__text">Insights alone don't change outcomes. Persivia embeds actionable intelligence directly into the workflows care teams already use, so the right action becomes the easiest one to take.</div>
       </div>
     </div>
   </div>
@@ -600,8 +604,8 @@
       </div>
       <div class="why__quote">
         <div class="why__quote-mark">"</div>
-        <p class="why__quote-text">[Insert attributed quote from Prime Healthcare or another client speaking specifically to executive responsiveness, tailored implementation, or measurable outcomes.]</p>
-        <div class="why__quote-name">Sarah M. Chen &middot; <span style="font-weight:400; color: var(--text-light)">VP, Population Health, Midwest Health System</span></div>
+        <p class="why__quote-text">With a huge success in the consolidation of the multiple EHR and claims data feeds and the multiple eCQM programs under our belt, we shifted focus to the care coordination, care management and analytics side, being mindful to still meet our interoperability goals while maintaining superior service to our patient population. With Persivia's complete delivery of a single platform solution, our clinicians have less 'clicks' to get at a true longitudinal medical record view of a patient right at the point of care. CareSpace&reg; is now our population health operating system that works in close conjunction with our system wide Cerner and 20 ambulatory EHRs.</p>
+        <div class="why__quote-name">Gary Wentzloff &middot; <span style="font-weight:400; color: var(--text-light)">CEO, McLaren Physician Partners</span></div>
       </div>
     </div>
   </div>
@@ -617,119 +621,107 @@
     </div>
     <div class="leadership__grid">
 
-      <!-- Leader 1: Nicole Dupont-Latimer -->
+      <!-- Nicole DuPont Latimer -->
       <div class="leader-card">
-        <div class="leader-card__photo leader-card__photo--branded">
-          <div class="leader-card__initials">
-            NL
-            <span class="leader-card__initials-sub">Leadership</span>
-          </div>
+        <div class="leader-card__photo">
+          <img src="Bio-Headshots/Nicole_Headshot.jpg" alt="Nicole DuPont Latimer" />
         </div>
         <div class="leader-card__body">
-          <div class="leader-card__name">Nicole Dupont-Latimer</div>
+          <div class="leader-card__name">Nicole DuPont Latimer</div>
           <div class="leader-card__title">Chief Executive Officer</div>
-          <div class="leader-card__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          <div class="leader-card__bio">Nicole is a seasoned healthcare and life sciences professional with a career built on scaling SaaS businesses and turning commercial strategy into measurable growth. Most recently, she served as CEO at Medrio, where she doubled revenues and drove a 230% increase in EBITDA. As CEO of Persivia, she brings deep expertise across health systems, payers, and life sciences to help the company sharpen its commercial edge and expand its impact.</div>
           <a href="https://www.linkedin.com/in/nicole-dupont-latimer-4097078/" target="_blank" class="leader-card__linkedin">LinkedIn &rarr;</a>
         </div>
       </div>
 
-      <!-- Leader 2: Kris Webster -->
+      <!-- Kris Webster -->
       <div class="leader-card">
-        <div class="leader-card__photo leader-card__photo--branded">
-          <div class="leader-card__initials">
-            KW
-            <span class="leader-card__initials-sub">Leadership</span>
-          </div>
+        <div class="leader-card__photo">
+          <img src="Bio-Headshots/Kris_Headshot.jpg" alt="Kris Webster" />
         </div>
         <div class="leader-card__body">
           <div class="leader-card__name">Kris Webster</div>
           <div class="leader-card__title">Chief Revenue Officer</div>
-          <div class="leader-card__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          <div class="leader-card__bio">With more than two decades of experience at the enterprise level of healthcare, Kris has built a career at the intersection of innovation, consumer-centered design, and measurable impact. As Chief Revenue Officer at Persivia, Kris brings that depth of experience to a mission that represents the next frontier of healthcare transformation, driving the growth strategy behind a platform that creates real value for hospitals, providers, payors, and most importantly, the patients at the center of it all.</div>
           <a href="https://www.linkedin.com/in/kris-webster-82b7918b/" target="_blank" class="leader-card__linkedin">LinkedIn &rarr;</a>
         </div>
       </div>
 
-      <!-- Leader 3 -->
+      <!-- Muhammad Kashif -->
       <div class="leader-card">
-        <div class="leader-card__photo leader-card__photo--placeholder">
-          <div class="leader-card__photo-placeholder">
-            <div class="leader-card__photo-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#134D67" stroke-width="1.5" stroke-linecap="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
-            </div>
-            <div class="leader-card__photo-label">Headshot</div>
-          </div>
+        <div class="leader-card__photo">
+          <img src="Bio-Headshots/Kashif.jpg" alt="Muhammad Kashif" />
         </div>
         <div class="leader-card__body">
-          <div class="leader-card__name">[Name]</div>
-          <div class="leader-card__title">[Title]</div>
-          <div class="leader-card__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-          <a href="#" class="leader-card__linkedin">LinkedIn &rarr;</a>
+          <div class="leader-card__name">Muhammad Kashif</div>
+          <div class="leader-card__title">Chief Technology Officer</div>
+          <div class="leader-card__bio">Kashif is the technical mind behind Persivia's platform, bringing over 20 years of experience building enterprise-grade health IT solutions. As CTO, he has led the architecture of CareSpace, pioneering real-time analytics, AI-driven decision support, and scalable data infrastructure purpose-built for population health and care management.</div>
+          <a href="https://www.linkedin.com/in/kash452/" target="_blank" class="leader-card__linkedin">LinkedIn &rarr;</a>
         </div>
       </div>
 
-      <!-- Leader 4 -->
+      <!-- Gregory Magazu -->
       <div class="leader-card">
-        <div class="leader-card__photo leader-card__photo--placeholder">
-          <div class="leader-card__photo-placeholder">
-            <div class="leader-card__photo-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#134D67" stroke-width="1.5" stroke-linecap="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
-            </div>
-            <div class="leader-card__photo-label">Headshot</div>
-          </div>
+        <div class="leader-card__photo">
+          <img src="Bio-Headshots/Greg Magazu_HS.jpg" alt="Gregory Magazu" />
         </div>
         <div class="leader-card__body">
-          <div class="leader-card__name">[Name]</div>
-          <div class="leader-card__title">[Title]</div>
-          <div class="leader-card__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-          <a href="#" class="leader-card__linkedin">LinkedIn &rarr;</a>
+          <div class="leader-card__name">Gregory Magazu, MBA</div>
+          <div class="leader-card__title">VP of Product Management</div>
+          <div class="leader-card__bio">Greg brings over 15 years of healthcare IT product leadership to Persivia, with a track record of building product strategies that balance immediate client needs with long-term platform vision. Previously VP of Product Management at OncoHealth and Director of Product Management at Optum, he was recognized as an inventor in UHG's Invention Program for a patent in AI-driven predictive analytics.</div>
+          <a href="https://www.linkedin.com/in/gregorymagazu/" target="_blank" class="leader-card__linkedin">LinkedIn &rarr;</a>
         </div>
       </div>
 
-      <!-- Leader 5 -->
+      <!-- Shardul Mehta -->
       <div class="leader-card">
-        <div class="leader-card__photo leader-card__photo--placeholder">
-          <div class="leader-card__photo-placeholder">
-            <div class="leader-card__photo-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#134D67" stroke-width="1.5" stroke-linecap="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
-            </div>
-            <div class="leader-card__photo-label">Headshot</div>
-          </div>
+        <div class="leader-card__photo">
+          <img src="Bio-Headshots/Shardul.jpg" alt="Shardul Mehta" />
         </div>
         <div class="leader-card__body">
-          <div class="leader-card__name">[Name]</div>
-          <div class="leader-card__title">[Title]</div>
-          <div class="leader-card__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-          <a href="#" class="leader-card__linkedin">LinkedIn &rarr;</a>
+          <div class="leader-card__name">Shardul Mehta, M.D.</div>
+          <div class="leader-card__title">Clinical Solutions Architect</div>
+          <div class="leader-card__bio">Shardul is a physician-turned-healthcare technologist with a background spanning clinical medicine, health informatics, and interoperability. As Clinical Solutions Architect at Persivia, he bridges the gap between clinical workflows and technology, helping care organizations implement solutions that actually work at the point of care.</div>
+          <a href="https://www.linkedin.com/in/shardul-mehta-899297b4/" target="_blank" class="leader-card__linkedin">LinkedIn &rarr;</a>
         </div>
       </div>
 
-      <!-- Leader 6 -->
+      <!-- Sharon Twaddle-McGinnis -->
       <div class="leader-card">
-        <div class="leader-card__photo leader-card__photo--placeholder">
-          <div class="leader-card__photo-placeholder">
-            <div class="leader-card__photo-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#134D67" stroke-width="1.5" stroke-linecap="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
-            </div>
-            <div class="leader-card__photo-label">Headshot</div>
-          </div>
+        <div class="leader-card__photo">
+          <img src="Bio-Headshots/Sharon_HS.jpg" alt="Sharon Twaddle-McGinnis" />
         </div>
         <div class="leader-card__body">
-          <div class="leader-card__name">[Name]</div>
-          <div class="leader-card__title">[Title]</div>
-          <div class="leader-card__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-          <a href="#" class="leader-card__linkedin">LinkedIn &rarr;</a>
+          <div class="leader-card__name">Sharon Twaddle-McGinnis, BSN, MHA</div>
+          <div class="leader-card__title">VP of Client Services</div>
+          <div class="leader-card__bio">Sharon brings over 30 years of healthcare leadership to Persivia. Before joining, she served as Director of Quality at Carolinas HealthCare System and as Clinical Quality Manager at Duke University Health System, giving her firsthand experience with hospital quality and performance improvement in the complex value-based care arena.</div>
+          <a href="https://www.linkedin.com/in/sharon-twaddle-mcginnis-bsn-mha-cssbb-4aa44a2a/" target="_blank" class="leader-card__linkedin">LinkedIn &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Will Peters -->
+      <div class="leader-card">
+        <div class="leader-card__photo">
+          <img src="Bio-Headshots/Will_headhsot.jpg" alt="Will Peters" />
+        </div>
+        <div class="leader-card__body">
+          <div class="leader-card__name">Will Peters</div>
+          <div class="leader-card__title">VP of Finance</div>
+          <div class="leader-card__bio">Will is a seasoned corporate finance leader with a career spanning Fortune 500 companies, venture-backed SaaS startups, and healthcare strategy. A CFA charter holder, he previously served as VP of Finance at CrowdComfort and provided fractional CFO services to SaaS businesses, bringing the kind of financial rigor and cross-sector experience that is hard to find in a single hire.</div>
+          <a href="https://www.linkedin.com/in/will-peters-cfa-55022/" target="_blank" class="leader-card__linkedin">LinkedIn &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Diana Rouhana -->
+      <div class="leader-card">
+        <div class="leader-card__photo">
+          <img src="Bio-Headshots/Diana_HS.jpg" alt="Diana Rouhana" />
+        </div>
+        <div class="leader-card__body">
+          <div class="leader-card__name">Diana Rouhana</div>
+          <div class="leader-card__title">Director of Implementation</div>
+          <div class="leader-card__bio">Diana has been at the heart of Persivia's implementation program for nearly 13 years, overseeing the end-to-end deployment of CareSpace across value-based care, care management, and quality reporting programs. Her deep institutional knowledge and cross-functional approach are a big part of why Persivia's implementations actually stick.</div>
+          <a href="https://www.linkedin.com/in/diana-rouhana-24a36614/" target="_blank" class="leader-card__linkedin">LinkedIn &rarr;</a>
         </div>
       </div>
 

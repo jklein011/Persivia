@@ -195,8 +195,10 @@
     .logo-marquee__track { display: flex; align-items: center; gap: 56px; width: max-content; animation: marquee 24s linear infinite; }
     .logo-marquee__track:hover { animation-play-state: paused; }
     @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    .logo-chip { height: 36px; background: rgba(19,77,103,0.1); border-radius: 6px; display: flex; align-items: center; justify-content: center; padding: 0 24px; font-size: 13px; font-weight: 600; color: var(--text-light); min-width: 130px; white-space: nowrap; transition: background 0.2s; }
-    .logo-chip:hover { background: rgba(19,77,103,0.18); }
+    .logo-chip { height: 44px; background: rgba(255,255,255,0.85); border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 6px 20px; min-width: 120px; white-space: nowrap; transition: background 0.2s, transform 0.2s; }
+    .logo-chip:hover { background: #ffffff; transform: translateY(-2px); }
+    .logo-chip img { height: 28px; width: auto; max-width: 120px; object-fit: contain; filter: grayscale(100%) opacity(0.65); transition: filter 0.2s; }
+    .logo-chip:hover img { filter: grayscale(40%) opacity(0.9); }
 
     /* TESTIMONIAL */
     .testimonial { background: var(--offwhite); }
@@ -358,7 +360,7 @@
             <!-- Status bar -->
             <rect x="16" y="232" width="368" height="48" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
             <circle cx="32" cy="256" r="5" fill="rgba(21,204,147,0.5)"/>
-            <text x="44" y="260" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(255,255,255,0.35)">CareSpace Platform — Live</text>
+            <text x="44" y="260" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(255,255,255,0.35)">CareSpace Platform - Live</text>
             <rect x="190" y="247" width="54" height="18" rx="4" fill="rgba(21,204,147,0.18)"/>
             <text x="217" y="260" font-family="Inter,sans-serif" font-size="8" fill="#15CC93" text-anchor="middle" font-weight="600">EHR Sync</text>
             <rect x="252" y="247" width="48" height="18" rx="4" fill="rgba(53,112,255,0.18)"/>
@@ -499,7 +501,7 @@
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3570FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
         <h3 class="pillar-card__h3">Actionable Simplicity</h3>
-        <p class="pillar-card__sub">Most platforms highlight problems. Persivia tells your team what to do next—and helps them do it. Replace disconnected solutions with one platform built for real clinical workflows.</p>
+        <p class="pillar-card__sub">Most platforms highlight problems. Persivia tells your team what to do next and helps them do it. Replace disconnected solutions with one platform built for real clinical workflows.</p>
         <button class="pillar-card__toggle" onclick="openPillar(2)">
           <span class="pillar-card__toggle-label">See how it works</span>
           <span class="pillar-card__toggle-icon">+</span>
@@ -523,7 +525,7 @@
 <section class="diff-band">
   <div class="container diff-band__inner">
     <h2 class="diff-band__h2">Not Just Insights. <span>Action.</span></h2>
-    <p class="diff-band__sub">Most platforms show you the problem. Persivia guides your team on what to do next—then makes it happen.</p>
+    <p class="diff-band__sub">Most platforms show you the problem. Persivia guides your team on what to do next, then makes it happen.</p>
     <div class="diff-band__boxes">
       <div class="diff-box">
         <div class="diff-box__img">
@@ -659,26 +661,35 @@
           </div>
         </div>
 
-        <!-- Slide 1: HCA Florida -->
+        <!-- Slide 1: HCA Florida Oak Hill Hospital -->
         <div class="stage-slide is-next" data-slide="1">
           <div class="slide-inner">
             <div class="slide-layout">
               <div>
-                <p class="case-study__eyebrow">Risk-Bearing Provider / Value-Based Contracts</p>
-                <h3 class="case-study__client">HCA Florida</h3>
-                <p class="case-study__desc">A high-volume provider organization sought to close care gaps at scale, improve quality scores, and demonstrate performance across multiple value-based contracts.</p>
-                <div class="case-study__tags">
-                  <span class="tag">Multi-Contract VBC</span>
-                  <span class="tag">Quality Gap Closure</span>
-                  <span class="tag">Real-Time Risk Stratification</span>
+                <p class="case-study__eyebrow">Acute Care / Post-Discharge / Care Coordination</p>
+                <h3 class="case-study__client">HCA Florida Oak Hill Hospital</h3>
+                <p class="case-study__desc" style="margin-bottom:8px;">Reducing readmissions through coordinated care.</p>
+                <p class="case-study__desc">Connected care teams with real-time insights to improve post-discharge outcomes.</p>
+                <div class="case-study__tags" style="margin-top:16px;">
+                  <span class="tag">Readmission Reduction</span>
+                  <span class="tag">Care Coordination</span>
+                  <span class="tag">Post-Discharge</span>
                 </div>
-                <a href="#contact" class="case-study__cta">Learn More &rarr;</a>
+                <!-- Footprint strip -->
+                <div style="display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;">
+                  <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:500;">Acute Care</span>
+                  <span style="font-size:12px;color:rgba(21,204,147,0.5);">·</span>
+                  <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:500;">Post-Discharge</span>
+                  <span style="font-size:12px;color:rgba(21,204,147,0.5);">·</span>
+                  <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:500;">Care Coordination</span>
+                </div>
+                <a href="#contact" class="case-study__cta" style="margin-top:20px;">Learn More &rarr;</a>
               </div>
               <div class="case-study__metrics">
-                <div class="case-metric"><div class="case-metric__num">[X]%</div><div class="case-metric__label">Improvement in quality measure scores</div></div>
-                <div class="case-metric"><div class="case-metric__num">[X]K</div><div class="case-metric__label">Care gaps closed in first year</div></div>
-                <div class="case-metric"><div class="case-metric__num">[X] wks</div><div class="case-metric__label">Implementation timeline</div></div>
-                <div class="case-metric"><div class="case-metric__num">[X]x</div><div class="case-metric__label">Point solutions consolidated</div></div>
+                <div class="case-metric"><div class="case-metric__num">$19M</div><div class="case-metric__label">Readmission cost avoided</div></div>
+                <div class="case-metric"><div class="case-metric__num">65%</div><div class="case-metric__label">Reduction in readmissions</div></div>
+                <div class="case-metric"><div class="case-metric__num">1,282</div><div class="case-metric__label">Readmissions avoided</div></div>
+                <div class="case-metric"><div class="case-metric__num" style="font-size:20px;letter-spacing:-0.5px;">Real-time</div><div class="case-metric__label">Care coordination</div></div>
               </div>
             </div>
           </div>
@@ -689,21 +700,64 @@
           <div class="slide-inner">
             <div class="slide-layout">
               <div>
-                <p class="case-study__eyebrow">ACO / Post-Acute Care Management</p>
+                <p class="case-study__eyebrow">Value-Based Care / ACO / Bundled Payments</p>
                 <h3 class="case-study__client">Prime Healthcare</h3>
-                <p class="case-study__desc">A nationally recognized health system extended care coordination across its ACO network, connecting acute, post-acute, and ambulatory settings under a single operational intelligence layer.</p>
-                <div class="case-study__tags">
-                  <span class="tag">ACO Network Coordination</span>
-                  <span class="tag">Post-Acute Transitions</span>
-                  <span class="tag">SDOH Integration</span>
+                <p class="case-study__desc" style="margin-bottom:8px;">A national leader in value-based care transformation.</p>
+                <p class="case-study__desc">Unified data across 50+ hospitals to power ACO, MA, and bundled payment performance.</p>
+                <div class="case-study__tags" style="margin-top:16px;">
+                  <span class="tag">ACO Performance</span>
+                  <span class="tag">Medicare Advantage</span>
+                  <span class="tag">Bundled Payments</span>
                 </div>
-                <a href="#contact" class="case-study__cta">Learn More &rarr;</a>
+                <!-- Footprint strip -->
+                <div style="display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;">
+                  <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:500;">51 Hospitals</span>
+                  <span style="font-size:12px;color:rgba(21,204,147,0.5);">·</span>
+                  <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:500;">360 Outpatient Sites</span>
+                  <span style="font-size:12px;color:rgba(21,204,147,0.5);">·</span>
+                  <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:500;">Multi-EHR</span>
+                </div>
+                <a href="#contact" class="case-study__cta" style="margin-top:20px;">Learn More &rarr;</a>
               </div>
               <div class="case-study__metrics">
-                <div class="case-metric"><div class="case-metric__num">[X]%</div><div class="case-metric__label">Reduction in avoidable readmissions</div></div>
-                <div class="case-metric"><div class="case-metric__num">[X]%</div><div class="case-metric__label">Post-acute follow-up compliance</div></div>
-                <div class="case-metric"><div class="case-metric__num">[X] wks</div><div class="case-metric__label">Time to full deployment</div></div>
-                <div class="case-metric"><div class="case-metric__num">$[X]M</div><div class="case-metric__label">In shared savings generated</div></div>
+                <div class="case-metric"><div class="case-metric__num">$17M</div><div class="case-metric__label">In incentive payments<sup style="font-size:9px;vertical-align:super;">1</sup></div></div>
+                <div class="case-metric"><div class="case-metric__num">4.6%</div><div class="case-metric__label">Reduction in readmissions</div></div>
+                <div class="case-metric"><div class="case-metric__num">~200</div><div class="case-metric__label">Episodic groups managed</div></div>
+                <div class="case-metric"><div class="case-metric__num">10+ yrs</div><div class="case-metric__label">Strategic partnership</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Harmony Cares -->
+        <div class="stage-slide" data-slide="3">
+          <div class="slide-inner">
+            <div class="slide-layout">
+              <div>
+                <p class="case-study__eyebrow">In-Home Care / Risk Adjustment / Telehealth</p>
+                <h3 class="case-study__client">Harmony Cares</h3>
+                <p class="case-study__desc" style="margin-bottom:8px;">Advancing in-home care with AI-enabled workflows.</p>
+                <p class="case-study__desc">Enabled risk adjustment, care management, and telehealth on a single platform.</p>
+                <div class="case-study__tags" style="margin-top:16px;">
+                  <span class="tag">Risk Adjustment</span>
+                  <span class="tag">Care Management</span>
+                  <span class="tag">Telehealth</span>
+                </div>
+                <!-- Footprint strip -->
+                <div style="display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;">
+                  <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:500;">200+ Groups</span>
+                  <span style="font-size:12px;color:rgba(21,204,147,0.5);">·</span>
+                  <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:500;">In-Home Care</span>
+                  <span style="font-size:12px;color:rgba(21,204,147,0.5);">·</span>
+                  <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:500;">Telehealth Enabled</span>
+                </div>
+                <a href="#contact" class="case-study__cta" style="margin-top:20px;">Learn More &rarr;</a>
+              </div>
+              <div class="case-study__metrics">
+                <div class="case-metric"><div class="case-metric__num" style="font-size:22px;letter-spacing:-0.5px;">85–100%</div><div class="case-metric__label">HCC pass rates</div></div>
+                <div class="case-metric"><div class="case-metric__num">50% &#8595;</div><div class="case-metric__label">Time for virtual HRA</div></div>
+                <div class="case-metric"><div class="case-metric__num">4</div><div class="case-metric__label">Solutions unified</div></div>
+                <div class="case-metric"><div class="case-metric__num">11</div><div class="case-metric__label">States operational scale</div></div>
               </div>
             </div>
           </div>
@@ -719,6 +773,7 @@
       <button class="stage-dot active" onclick="stageGoTo(0)" data-dot="0"></button>
       <button class="stage-dot" onclick="stageGoTo(1)" data-dot="1"></button>
       <button class="stage-dot" onclick="stageGoTo(2)" data-dot="2"></button>
+      <button class="stage-dot" onclick="stageGoTo(3)" data-dot="3"></button>
       <button class="stage-btn" onclick="stageMove(1)" aria-label="Next">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
@@ -733,23 +788,27 @@
   <div class="logo-marquee__track-wrapper">
     <div class="logo-marquee__track" id="marqueeTrack">
       <!-- Set 1 -->
-      <div class="logo-chip">McLaren Health</div>
-      <div class="logo-chip">HCA Florida</div>
-      <div class="logo-chip">Prime Healthcare</div>
-      <div class="logo-chip">Sanitas</div>
-      <div class="logo-chip">McLaren Health</div>
-      <div class="logo-chip">HCA Florida</div>
-      <div class="logo-chip">Prime Healthcare</div>
-      <div class="logo-chip">Sanitas</div>
-      <!-- Set 2 — exact duplicate for seamless loop -->
-      <div class="logo-chip">McLaren Health</div>
-      <div class="logo-chip">HCA Florida</div>
-      <div class="logo-chip">Prime Healthcare</div>
-      <div class="logo-chip">Sanitas</div>
-      <div class="logo-chip">McLaren Health</div>
-      <div class="logo-chip">HCA Florida</div>
-      <div class="logo-chip">Prime Healthcare</div>
-      <div class="logo-chip">Sanitas</div>
+      <div class="logo-chip"><img src="Client Logos/mclaren____.jpg" alt="McLaren Health" /></div>
+      <div class="logo-chip"><img src="Client Logos/HCA.png" alt="HCA Florida" /></div>
+      <div class="logo-chip"><img src="Client Logos/Prime-Healthcare.jpg" alt="Prime Healthcare" /></div>
+      <div class="logo-chip"><img src="Client Logos/HarmonyCares.jpg" alt="HarmonyCares" /></div>
+      <div class="logo-chip"><img src="Client Logos/Catholic-Medical-Partners.png" alt="Catholic Medical Partners" /></div>
+      <div class="logo-chip"><img src="Client Logos/Mount-Nittany.png" alt="Mount Nittany" /></div>
+      <div class="logo-chip"><img src="Client Logos/pmc_medical_group_logo.jpg" alt="PMC Medical Group" /></div>
+      <div class="logo-chip"><img src="Client Logos/st.-john-riverside-hospital.png" alt="St. John Riverside Hospital" /></div>
+      <div class="logo-chip"><img src="Client Logos/Samaritan-Medical-Centre-Watertown-NY.jpg" alt="Samaritan Medical Centre" /></div>
+      <div class="logo-chip"><img src="Client Logos/desert-mountain.png" alt="Desert Mountain" /></div>
+      <!-- Set 2 - exact duplicate for seamless loop -->
+      <div class="logo-chip"><img src="Client Logos/mclaren____.jpg" alt="McLaren Health" /></div>
+      <div class="logo-chip"><img src="Client Logos/HCA.png" alt="HCA Florida" /></div>
+      <div class="logo-chip"><img src="Client Logos/Prime-Healthcare.jpg" alt="Prime Healthcare" /></div>
+      <div class="logo-chip"><img src="Client Logos/HarmonyCares.jpg" alt="HarmonyCares" /></div>
+      <div class="logo-chip"><img src="Client Logos/Catholic-Medical-Partners.png" alt="Catholic Medical Partners" /></div>
+      <div class="logo-chip"><img src="Client Logos/Mount-Nittany.png" alt="Mount Nittany" /></div>
+      <div class="logo-chip"><img src="Client Logos/pmc_medical_group_logo.jpg" alt="PMC Medical Group" /></div>
+      <div class="logo-chip"><img src="Client Logos/st.-john-riverside-hospital.png" alt="St. John Riverside Hospital" /></div>
+      <div class="logo-chip"><img src="Client Logos/Samaritan-Medical-Centre-Watertown-NY.jpg" alt="Samaritan Medical Centre" /></div>
+      <div class="logo-chip"><img src="Client Logos/desert-mountain.png" alt="Desert Mountain" /></div>
     </div>
   </div>
 </section>
@@ -759,14 +818,14 @@
   <div class="container">
     <div class="testimonial__inner">
       <div class="testimonial__quote-mark">"</div>
-      <p class="testimonial__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat, duis aute irure dolor in reprehenderit.</p>
+      <p class="testimonial__text">With a huge success in the consolidation of the multiple EHR and claims data feeds and the multiple eCQM programs under our belt, we shifted focus to the care coordination, care management and analytics side, being mindful to still meet our interoperability goals while maintaining superior service to our patient population. With Persivia's complete delivery of a single platform solution, our clinicians have less 'clicks' to get at a true longitudinal medical record view of a patient right at the point of care. CareSpace&reg; is now our population health operating system that works in close conjunction with our system wide Cerner and 20 ambulatory EHRs.</p>
       <div class="testimonial__placeholder">
         <div class="testimonial__avatar">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#134D67" stroke-width="1.8" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
         <div class="testimonial__meta">
-          <p class="testimonial__name">[Full Name]</p>
-          <p class="testimonial__title">[Title], [Organization]</p>
+          <p class="testimonial__name">Gary Wentzloff</p>
+          <p class="testimonial__title">CEO, McLaren Physician Partners</p>
         </div>
       </div>
     </div>
@@ -870,7 +929,7 @@ function openPillar(idx) {
 
 /* ── STAGE CAROUSEL (manual navigation only) ───────────── */
 let stageActive = 0;
-const stageTotal = 3;
+const stageTotal = 4;
 const stageSlides = document.querySelectorAll('.stage-slide');
 const stageDots   = document.querySelectorAll('.stage-dot');
 
