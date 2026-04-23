@@ -276,8 +276,11 @@
       background: linear-gradient(145deg, var(--navy), #0d3548);
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 16px; overflow: hidden; flex-shrink: 0;
+      box-shadow: 0 0 0 3px var(--green), 0 0 0 5px var(--offwhite);
     }
     .advisor-card__avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    /* Gregory's source headshot is framed with his face left-of-center; nudge crop to center it in the circle */
+    .advisor-card__avatar img[alt="Gregory Magazu"] { object-position: 40% top; }
     .advisor-card__name { font-size: 15px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
     .advisor-card__title { font-size: 12px; color: var(--text-light); line-height: 1.5; }
 
@@ -302,7 +305,7 @@
     .cta-section__form { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; padding: 36px 32px; }
     .cta-section__form-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 20px; }
 
-    /* HubSpot form wrapper — no extra wrapper styles needed in split layout */
+    /* HubSpot form wrapper - no extra wrapper styles needed in split layout */
 
     /* FOOTER */
     .footer { background: #07202d; padding: 52px 0 32px; }
@@ -361,7 +364,7 @@
   <div class="hero__inner">
     <p class="hero__eyebrow">Our Story</p>
     <h1 class="hero__h1">Built for the Moments That <span>Matter Most</span></h1>
-    <p class="hero__sub">Persivia was founded on a simple conviction: healthcare organizations don't need more data. They need the intelligence, tools, and workflows to act on it—at the moments when outcomes and costs are determined across the entire care continuum.</p>
+    <p class="hero__sub">Persivia was founded on a simple conviction: healthcare organizations don't need more data. They need the intelligence, tools, and workflows to act on it, at the moments when outcomes and costs are determined across the entire care continuum.</p>
     <div class="hero__actions">
       <a href="#leadership" class="btn btn--primary">Meet the Team</a>
       <a href="#contact" class="btn btn--outline">Start the Conversation &rarr;</a>
@@ -414,10 +417,10 @@
       <div class="story__copy">
         <span class="label">Our Story</span>
         <h2 class="section__h2">The Intelligence Layer Healthcare Has Been Missing</h2>
-        <p>Healthcare organizations collect enormous amounts of data—but most of it is fragmented across dozens of systems and rarely translates into action at the point of care.</p>
+        <p>Healthcare organizations collect enormous amounts of data, but most of it is fragmented across dozens of systems and rarely translates into action at the point of care.</p>
         <p><strong>Persivia was built to change that.</strong></p>
-        <p>We created CareSpace, a digital health operating platform that unifies data from EHRs, claims, labs, SDOH sources, remote monitoring, and more into a continuously updated longitudinal patient record. On top of that foundation sits Persivia’s AI engine, care management workflows, and quality reporting tools—giving every team, from the C-suite to the care manager, the intelligence they need to act.</p>
-        <p>Today health systems, ACOs, payers, and risk-bearing provider groups rely on Persivia to close care gaps at scale, succeed in value-based contracts, and improve cost and quality across the full continuum of care—often replacing five or six disconnected point solutions with one unified platform.</p>
+        <p>We created CareSpace, a digital health operating platform that unifies data from EHRs, claims, labs, SDOH sources, remote monitoring, and more into a continuously updated longitudinal patient record. On top of that foundation sits Persivia’s AI engine, care management workflows, and quality reporting tools, giving every team, from the C-suite to the care manager, the intelligence they need to act.</p>
+        <p>Today health systems, ACOs, payers, and risk-bearing provider groups rely on Persivia to close care gaps at scale, succeed in value-based contracts, and improve cost and quality across the full continuum of care, often replacing five or six disconnected point solutions with one unified platform.</p>
       </div>
       <div class="story__visual">
         <div class="story__stat">
@@ -605,8 +608,8 @@
       </div>
       <div class="why__quote">
         <div class="why__quote-mark">"</div>
-        <p class="why__quote-text">With a huge success in the consolidation of the multiple EHR and claims data feeds and the multiple eCQM programs under our belt, we shifted focus to the care coordination, care management and analytics side, being mindful to still meet our interoperability goals while maintaining superior service to our patient population. With Persivia's complete delivery of a single platform solution, our clinicians have less 'clicks' to get at a true longitudinal medical record view of a patient right at the point of care. CareSpace&reg; is now our population health operating system that works in close conjunction with our system wide Cerner and 20 ambulatory EHRs.</p>
-        <div class="why__quote-name">Gary Wentzloff &middot; <span style="font-weight:400; color: var(--text-light)">CEO, McLaren Physician Partners</span></div>
+        <p class="why__quote-text">Persivia transformed how we use patient data. Seamless data normalization across systems fueled our Year 1 savings, while the AI engine keeps our teams focused on what matters most: closing care gaps and catching critical cases fast. They're not just a vendor; they're a strategic partner invested in our long-term success.</p>
+        <div class="why__quote-name">Dr. Ahmad Imran, MD, MBA &middot; <span style="font-weight:400; color: var(--text-light)">Vice President, Value-Based Care and Quality, Prime Healthcare</span></div>
       </div>
     </div>
   </div>
@@ -734,7 +737,7 @@
       <div class="cta-section__content">
         <span class="tag-pill">Ready to Meet the Team?</span>
         <h2 class="cta-section__h2">Let's Start a Real Conversation</h2>
-        <p class="cta-section__sub">We'd love to learn about your organization's goals and show you what Persivia can do. No slides, no pitch — just a real conversation.</p>
+        <p class="cta-section__sub">We'd love to learn about your organization's goals and show you what Persivia can do. No slides, no pitch. Just a real conversation.</p>
         <ul class="cta-section__bullets">
           <li>Meet the leadership team driving outcomes across the care continuum</li>
           <li>See the platform in the context of your specific use cases</li>
