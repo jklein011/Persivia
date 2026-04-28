@@ -51,26 +51,30 @@
     .hero { background: linear-gradient(135deg, var(--navy) 0%, #0d3548 60%, #0a2a3a 100%); padding: 100px 0 80px; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(21,204,147,0.12) 0%, transparent 70%); pointer-events: none; }
     .hero::after { content: ''; position: absolute; bottom: -100px; left: -60px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(53,112,255,0.08) 0%, transparent 70%); pointer-events: none; }
-    .hero__inner { display: grid; grid-template-columns: 58fr 42fr; gap: 64px; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
+    .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; max-width: 1340px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
     .hero__eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--green); margin-bottom: 20px; }
-    .hero__h1 { font-size: clamp(34px, 4.5vw, 52px); font-weight: 800; line-height: 1.1; color: var(--white); letter-spacing: -1.5px; margin-bottom: 24px; }
-    .hero__h1 span { color: var(--green); }
+    .hero__h1 { font-size: clamp(28px, 3.4vw, 42px); font-weight: 800; line-height: 1.15; color: var(--white); letter-spacing: -1px; margin-bottom: 24px; }
     .hero__h1 span { color: var(--green); }
     .hero__sub { font-size: 18px; line-height: 1.65; color: rgba(255,255,255,0.75); margin-bottom: 40px; max-width: 640px; }
     .hero__actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
     .hero__visual { display: flex; align-items: center; justify-content: center; }
-    .hero__img-box {
-      width: 100%; border-radius: 20px; overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.12);
-      aspect-ratio: 4/3; position: relative;
-      background: rgba(255,255,255,0.06);
+
+    /* CareSpace animated hero visual (v4 — flow-through with unifying ring core).
+       Replaces the previous static Group 1171279469.png graphic. */
+    #carespace-hero-visual {
+      position: relative;
+      width: 100%;
+      max-width: 880px;
+      aspect-ratio: 760 / 400;
+      overflow: visible;
     }
-    .hero__img-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .hero__img-placeholder {
-      width: 100%; height: 100%; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 14px;
+    #carespace-hero-visual svg { display: block; width: 100%; height: 100%; }
+    .cs-outcome { cursor: pointer; }
+    .cs-hover-label { pointer-events: none; opacity: 0; transition: opacity 0.2s; }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
     }
-    .hero__img-placeholder-label { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: auto; padding-bottom: 16px; position: relative; z-index: 1; }
 
     /* PROOF STRIP */
     .proof-strip { background: var(--navy); padding: 56px 0; }
@@ -306,8 +310,113 @@
       </div>
     </div>
     <div class="hero__visual">
-      <div class="hero__img-box">
-        <img src="Web-Graphics/Group 1171279469.png" alt="Persivia platform connecting data sources to risk stratification, care management, clinical insights, population health, and predictive alerts" />
+      <div id="carespace-hero-visual" role="img"
+           aria-label="Animated diagram showing five healthcare data sources flowing through the CareSpace intelligence core into five care outcomes.">
+        <span class="sr-only">
+          Data sources &mdash; Clinical, Claims, SDoH, EHR, Device &mdash; flow through
+          the CareSpace intelligence core and resolve into five outcomes:
+          Risk stratification, Care management, Clinical insights, Population health,
+          and Predictive alerts. Hover any outcome to see which data sources feed it.
+        </span>
+        <svg id="cs-hero-svg" viewBox="0 0 760 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <defs>
+            <radialGradient id="cs-core-glow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#4FD4FF" stop-opacity="0.5"/>
+              <stop offset="60%" stop-color="#1E88C9" stop-opacity="0.1"/>
+              <stop offset="100%" stop-color="#0A2B38" stop-opacity="0"/>
+            </radialGradient>
+
+            <symbol id="ic-shield" viewBox="-10 -10 20 20">
+              <path d="M 0 -7 L -5 -4.5 L -5 1.5 C -5 4.5 -2.5 6.5 0 7.5 C 2.5 6.5 5 4.5 5 1.5 L 5 -4.5 Z"
+                    fill="none" stroke="#E8F4FF" stroke-width="1.4" stroke-linejoin="round"/>
+              <path d="M -2 0 L -0.5 1.5 L 2.5 -1.5"
+                    fill="none" stroke="#E8F4FF" stroke-width="1.4"
+                    stroke-linejoin="round" stroke-linecap="round"/>
+            </symbol>
+            <symbol id="ic-heart" viewBox="-10 -10 20 20">
+              <path d="M 0 6 C -7 1.5 -7 -5 -3.5 -5 C -1.5 -5 0 -3 0 -2.5 C 0 -3 1.5 -5 3.5 -5 C 7 -5 7 1.5 0 6 Z"
+                    fill="#E8F4FF"/>
+            </symbol>
+            <symbol id="ic-chart" viewBox="-10 -10 20 20">
+              <rect x="-5.5" y="1" width="2.2" height="5" fill="#E8F4FF"/>
+              <rect x="-1.1" y="-2" width="2.2" height="8" fill="#E8F4FF"/>
+              <rect x="3.3" y="-5" width="2.2" height="11" fill="#E8F4FF"/>
+            </symbol>
+            <symbol id="ic-people" viewBox="-10 -10 20 20">
+              <circle cx="-3.5" cy="-3" r="1.8" fill="#E8F4FF"/>
+              <circle cx="3.5" cy="-3" r="1.8" fill="#E8F4FF"/>
+              <path d="M -7 5.5 C -7 1 -5 0 -3.5 0 C -2 0 0 1 0 5.5 Z" fill="#E8F4FF"/>
+              <path d="M 0 5.5 C 0 1 2 0 3.5 0 C 5 0 7 1 7 5.5 Z" fill="#E8F4FF"/>
+            </symbol>
+            <symbol id="ic-bell" viewBox="-10 -10 20 20">
+              <path d="M 0 -6 C -3.5 -6 -4.5 -3.5 -4.5 -1.5 L -4.5 1.5 L -5.5 3.5 L 5.5 3.5 L 4.5 1.5 L 4.5 -1.5 C 4.5 -3.5 3.5 -6 0 -6 Z"
+                    fill="#E8F4FF"/>
+              <path d="M -2 4.5 C -2 6 2 6 2 4.5" fill="none" stroke="#E8F4FF"
+                    stroke-width="1.2" stroke-linecap="round"/>
+              <circle cx="3.5" cy="-5.5" r="2" fill="#15CC93"/>
+            </symbol>
+          </defs>
+
+          <!-- subtle background grid lines (ambient, very faint) -->
+          <g opacity="0.05">
+            <line x1="0" y1="100" x2="760" y2="100" stroke="#4FD4FF" stroke-width="0.5"/>
+            <line x1="0" y1="200" x2="760" y2="200" stroke="#4FD4FF" stroke-width="0.5"/>
+            <line x1="0" y1="300" x2="760" y2="300" stroke="#4FD4FF" stroke-width="0.5"/>
+          </g>
+
+          <!-- core ambient glow -->
+          <circle cx="330" cy="200" r="155" fill="url(#cs-core-glow)"/>
+
+          <!-- flow paths (rendered by JS) -->
+          <g id="cs-paths" fill="none" stroke-width="1" opacity="0.28"></g>
+
+          <!-- animated particles (rendered by JS) -->
+          <g id="cs-particles"></g>
+
+          <!-- data source nodes (rendered by JS) -->
+          <g id="cs-sources"></g>
+
+          <!-- central intelligence core -->
+          <g id="cs-core">
+            <circle cx="330" cy="200" r="68" fill="none" stroke="#4FD4FF" stroke-width="0.5" opacity="0.4">
+              <animate attributeName="r" values="68;88;68" dur="4s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.4;0;0.4" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <g transform="translate(330 200)">
+              <g id="cs-orbit">
+                <circle cx="0" cy="0" r="46" fill="none" stroke="#4FD4FF" stroke-width="0.4" opacity="0.18"/>
+                <circle cx="46" cy="0" r="4.5" fill="#4FD4FF" opacity="0.9"/>
+                <circle cx="23" cy="39.84" r="4.5" fill="#4FD4FF" opacity="0.6"/>
+                <circle cx="-23" cy="39.84" r="4.5" fill="#4FD4FF" opacity="0.45"/>
+                <circle cx="-46" cy="0" r="4.5" fill="#4FD4FF" opacity="0.55"/>
+                <circle cx="-23" cy="-39.84" r="4.5" fill="#4FD4FF" opacity="0.7"/>
+                <circle cx="23" cy="-39.84" r="4.5" fill="#4FD4FF" opacity="0.9"/>
+                <animateTransform attributeName="transform" type="rotate"
+                                  from="0" to="360" dur="24s" repeatCount="indefinite"/>
+              </g>
+            </g>
+            <circle cx="330" cy="200" r="68" fill="#0A2B38" stroke="#4FD4FF" stroke-width="1"/>
+            <g id="cs-brandmark" aria-hidden="true">
+              <text x="330" y="199" text-anchor="middle" fill="#E8F4FF"
+                    font-family="inherit" font-size="16" font-weight="600">CareSpace</text>
+              <text x="375" y="190" fill="#E8F4FF" opacity="0.7"
+                    font-family="inherit" font-size="7.5">&reg;</text>
+              <text x="330" y="213" text-anchor="middle" fill="#7FB8E0"
+                    font-family="inherit" font-size="8" letter-spacing="0.14em"
+                    opacity="0.85">PLATFORM</text>
+            </g>
+          </g>
+
+          <!-- outcome nodes (rendered by JS) -->
+          <g id="cs-outcomes"></g>
+
+          <!-- hover label panel — pinned below the core -->
+          <g id="cs-hover" class="cs-hover-label" transform="translate(220 288)">
+            <rect x="0" y="0" width="220" height="48" rx="6" fill="#0A2B38" stroke="#15CC93" stroke-width="0.5"/>
+            <text id="cs-hl-title" x="110" y="20" text-anchor="middle" fill="#E8F4FF" font-family="inherit" font-size="12" font-weight="500"></text>
+            <text id="cs-hl-sub" x="110" y="36" text-anchor="middle" fill="#7FB8E0" font-family="inherit" font-size="10.5"></text>
+          </g>
+        </svg>
       </div>
     </div>
   </div>
@@ -792,6 +901,218 @@ function stageGoTo(n) {
 }
 
 function stageMove(dir) { stageGoTo(stageActive + dir); }
+
+/* ── CARESPACE ANIMATED HERO VISUAL ────────────────────────
+   Renders the source nodes, outcome nodes, flow paths, and
+   continuous particle stream for the v4 hero visual that
+   replaced Web-Graphics/Group 1171279469.png. All copy and
+   icon mappings live in the CONFIG object below; swap there
+   to adjust labels, subtitles, or which sources feed each
+   outcome (no markup changes needed). */
+(function () {
+  const CONFIG = {
+    sources: [
+      { id: 'clinical', label: 'Clinical', y: 100 },
+      { id: 'claims',   label: 'Claims',   y: 150 },
+      { id: 'sdoh',     label: 'SDoH',     y: 200 },
+      { id: 'ehr',      label: 'EHR',      y: 250 },
+      { id: 'device',   label: 'Device',   y: 300 },
+    ],
+    outcomes: [
+      { id: 'risk',     label: 'Risk stratification', sub: 'Predict who needs intervention', icon: 'ic-shield', y: 65,  feeds: ['clinical','claims','sdoh'] },
+      { id: 'care',     label: 'Care management',     sub: 'Orchestrate care end-to-end',     icon: 'ic-heart',  y: 135, feeds: ['clinical','ehr','sdoh'] },
+      { id: 'insights', label: 'Clinical insights',   sub: 'Decisions at point of care',      icon: 'ic-chart',  y: 200, feeds: ['clinical','ehr','device'] },
+      { id: 'pop',      label: 'Population health',   sub: 'Manage cohorts at scale',         icon: 'ic-people', y: 265, feeds: ['claims','sdoh','ehr'] },
+      { id: 'alerts',   label: 'Predictive alerts',   sub: 'Act before events happen',        icon: 'ic-bell',   y: 335, feeds: ['clinical','device','ehr'] },
+    ],
+    layout: {
+      sourceX: 90, coreX: 330, coreY: 200, outcomeX: 570,
+      coreRadius: 68, outcomeRadius: 20, sourceRadius: 14,
+    },
+    motion: { spawnIntervalMs: 240, particleDurationMin: 2.7, particleDurationJitter: 1.2 },
+    colors: { cyan: '#4FD4FF', emerald: '#15CC93', deep: '#0A2B38', textPrimary: '#E8F4FF', textMuted: '#B8D4F0' },
+  };
+
+  // Replace this with real click behavior (route to a section, open a modal, etc.)
+  function onOutcomeClick(outcome) {
+    console.log('CareSpace outcome clicked:', outcome.id, outcome.label);
+  }
+
+  const SVGNS = 'http://www.w3.org/2000/svg';
+  const { sources, outcomes, layout, colors } = CONFIG;
+  const SRC_X = layout.sourceX, CORE_X = layout.coreX, CORE_Y = layout.coreY;
+  const OUT_X = layout.outcomeX, CORE_R = layout.coreRadius, OUT_R = layout.outcomeRadius;
+  const CP_IN_1 = 110, CP_IN_2 = 85, CP_OUT_1 = 100, CP_OUT_2 = 85;
+
+  const sourcesG = document.getElementById('cs-sources');
+  const outcomesG = document.getElementById('cs-outcomes');
+  const pathsG = document.getElementById('cs-paths');
+  const particlesG = document.getElementById('cs-particles');
+  const hoverLabel = document.getElementById('cs-hover');
+  const hlTitle = document.getElementById('cs-hl-title');
+  const hlSub = document.getElementById('cs-hl-sub');
+  const orbitG = document.getElementById('cs-orbit');
+
+  if (!sourcesG) return; // hero visual not on this page
+
+  // Source nodes
+  sources.forEach(s => {
+    const g = document.createElementNS(SVGNS, 'g');
+    g.setAttribute('data-id', s.id);
+    g.innerHTML = `
+      <circle cx="${SRC_X}" cy="${s.y}" r="${layout.sourceRadius}" fill="${colors.deep}" stroke="${colors.cyan}" stroke-width="0.8"/>
+      <circle cx="${SRC_X}" cy="${s.y}" r="3" fill="${colors.cyan}"/>
+      <text x="${SRC_X - 22}" y="${s.y + 3.5}" text-anchor="end" fill="${colors.textMuted}" font-family="inherit" font-size="11">${s.label}</text>
+    `;
+    sourcesG.appendChild(g);
+  });
+
+  // Outcome nodes (with icons)
+  outcomes.forEach(o => {
+    const g = document.createElementNS(SVGNS, 'g');
+    g.setAttribute('data-id', o.id);
+    g.setAttribute('class', 'cs-outcome');
+    g.innerHTML = `
+      <circle class="cs-halo" cx="${OUT_X}" cy="${o.y}" r="28" fill="none" stroke="${colors.emerald}" stroke-width="0.5" opacity="0.22"/>
+      <circle class="cs-ring" cx="${OUT_X}" cy="${o.y}" r="${OUT_R}" fill="${colors.deep}" stroke="${colors.emerald}" stroke-width="1"/>
+      <use href="#${o.icon}" x="${OUT_X - 10}" y="${o.y - 10}" width="20" height="20"/>
+      <text x="${OUT_X + 32}" y="${o.y + 4.5}" fill="${colors.textPrimary}" font-family="inherit" font-size="12.5" font-weight="500">${o.label}</text>
+    `;
+    outcomesG.appendChild(g);
+    g.addEventListener('mouseenter', () => highlight(o));
+    g.addEventListener('mouseleave', () => clearHighlight());
+    g.addEventListener('click', () => onOutcomeClick(o));
+  });
+
+  // Flow paths
+  const pathIndex = {};
+  outcomes.forEach(o => {
+    o.feeds.forEach(srcId => {
+      const s = sources.find(x => x.id === srcId);
+      const p1 = document.createElementNS(SVGNS, 'path');
+      p1.setAttribute('d', `M ${SRC_X + layout.sourceRadius} ${s.y} C ${CORE_X - CP_IN_1} ${s.y}, ${CORE_X - CP_IN_2} ${CORE_Y}, ${CORE_X - CORE_R} ${CORE_Y}`);
+      p1.setAttribute('stroke', colors.cyan);
+      p1.setAttribute('fill', 'none');
+      p1.setAttribute('stroke-width', '0.7');
+      p1.setAttribute('opacity', '0.2');
+      pathsG.appendChild(p1);
+
+      const p2 = document.createElementNS(SVGNS, 'path');
+      p2.setAttribute('d', `M ${CORE_X + CORE_R} ${CORE_Y} C ${CORE_X + CP_OUT_1} ${CORE_Y}, ${OUT_X - CP_OUT_2} ${o.y}, ${OUT_X - OUT_R} ${o.y}`);
+      p2.setAttribute('stroke', colors.emerald);
+      p2.setAttribute('fill', 'none');
+      p2.setAttribute('stroke-width', '0.7');
+      p2.setAttribute('opacity', '0.2');
+      pathsG.appendChild(p2);
+
+      pathIndex[o.id] = pathIndex[o.id] || { ins: [], outs: [] };
+      pathIndex[o.id].ins.push({ el: p1, src: s });
+      pathIndex[o.id].outs.push({ el: p2 });
+    });
+  });
+
+  // Particles — respects prefers-reduced-motion
+  const motionEnabled = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const particles = [];
+
+  if (!motionEnabled && orbitG) {
+    orbitG.querySelectorAll('animateTransform, animate').forEach(a => a.remove());
+  }
+
+  function spawnParticle() {
+    if (!motionEnabled) return;
+    const src = sources[Math.floor(Math.random() * sources.length)];
+    const out = outcomes[Math.floor(Math.random() * outcomes.length)];
+    const c = document.createElementNS(SVGNS, 'circle');
+    c.setAttribute('r', '1.7');
+    c.setAttribute('fill', colors.cyan);
+    c.setAttribute('opacity', '0.9');
+    particlesG.appendChild(c);
+    particles.push({
+      el: c, t: 0,
+      duration: CONFIG.motion.particleDurationMin + Math.random() * CONFIG.motion.particleDurationJitter,
+      src, out, phase: 'in',
+    });
+  }
+  if (motionEnabled) setInterval(spawnParticle, CONFIG.motion.spawnIntervalMs);
+
+  function bezier(t, p0, p1, p2, p3) {
+    const u = 1 - t;
+    return {
+      x: u*u*u*p0.x + 3*u*u*t*p1.x + 3*u*t*t*p2.x + t*t*t*p3.x,
+      y: u*u*u*p0.y + 3*u*u*t*p1.y + 3*u*t*t*p2.y + t*t*t*p3.y,
+    };
+  }
+
+  let last = performance.now();
+  function frame(now) {
+    const dt = (now - last) / 1000;
+    last = now;
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i];
+      p.t += dt / p.duration;
+      if (p.t >= 1) {
+        if (p.phase === 'in') { p.phase = 'out'; p.t = 0; p.el.setAttribute('fill', colors.emerald); }
+        else { p.el.remove(); particles.splice(i, 1); continue; }
+      }
+      let pos;
+      if (p.phase === 'in') {
+        pos = bezier(p.t,
+          { x: SRC_X + layout.sourceRadius, y: p.src.y },
+          { x: CORE_X - CP_IN_1, y: p.src.y },
+          { x: CORE_X - CP_IN_2, y: CORE_Y },
+          { x: CORE_X - CORE_R, y: CORE_Y });
+      } else {
+        pos = bezier(p.t,
+          { x: CORE_X + CORE_R, y: CORE_Y },
+          { x: CORE_X + CP_OUT_1, y: CORE_Y },
+          { x: OUT_X - CP_OUT_2, y: p.out.y },
+          { x: OUT_X - OUT_R, y: p.out.y });
+      }
+      p.el.setAttribute('cx', pos.x);
+      p.el.setAttribute('cy', pos.y);
+      const fade = p.t < 0.1 ? p.t * 10 : p.t > 0.9 ? (1 - p.t) * 10 : 1;
+      p.el.setAttribute('opacity', String(0.9 * fade));
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  function highlight(o) {
+    pathsG.querySelectorAll('path').forEach(p => p.setAttribute('opacity', '0.06'));
+    const set = pathIndex[o.id];
+    if (set) {
+      set.ins.forEach(x => { x.el.setAttribute('opacity', '0.9'); x.el.setAttribute('stroke-width', '1.3'); });
+      set.outs.forEach(x => { x.el.setAttribute('opacity', '0.9'); x.el.setAttribute('stroke-width', '1.3'); });
+    }
+    sources.forEach(s => {
+      const g = sourcesG.querySelector(`[data-id="${s.id}"]`);
+      const active = o.feeds.includes(s.id);
+      g.querySelectorAll('circle').forEach(c => c.setAttribute('opacity', active ? '1' : '0.3'));
+      g.querySelector('text').setAttribute('opacity', active ? '1' : '0.3');
+    });
+    document.querySelectorAll('.cs-outcome').forEach(n => {
+      n.style.opacity = n.getAttribute('data-id') === o.id ? '1' : '0.45';
+    });
+    hlTitle.textContent = o.label;
+    hlSub.textContent = o.sub;
+    hoverLabel.style.opacity = '1';
+  }
+
+  function clearHighlight() {
+    pathsG.querySelectorAll('path').forEach(p => {
+      p.setAttribute('opacity', '0.2');
+      p.setAttribute('stroke-width', '0.7');
+    });
+    sources.forEach(s => {
+      const g = sourcesG.querySelector(`[data-id="${s.id}"]`);
+      g.querySelectorAll('circle').forEach(c => c.setAttribute('opacity', '1'));
+      g.querySelector('text').setAttribute('opacity', '1');
+    });
+    document.querySelectorAll('.cs-outcome').forEach(n => { n.style.opacity = '1'; });
+    hoverLabel.style.opacity = '0';
+  }
+})();
 </script>
 
 </body>
